@@ -39,24 +39,24 @@ size_t ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize
 	return (dstsize + ft_strlen(src));
 }
 
-int main (void)
-{
-	char dst[16] = "Hello,"; // size 8
-	char src[] = "World!"; // size 7
-	int size = 0;
+// int main (void)
+// {
+// 	char dst[16] = "Hello,"; // size 8
+// 	char src[] = "World!"; // size 7
+// 	int size = 0;
 
-	printf("Before strlcat() = %s\n", dst);
-	int total_len = strlcat(dst, src, size);
-	printf("After strlcat() = %s\n", dst);
-	printf("total_len = %d\n", total_len);
+// 	printf("Before strlcat() = %s\n", dst);
+// 	int total_len = strlcat(dst, src, size);
+// 	printf("After strlcat() = %s\n", dst);
+// 	printf("total_len = %d\n", total_len);
 
-	// Own function
-	char ft_dst[16] = "Hello,"; // size 8
-	char ft_src[] = "World!"; // size 7	
-	printf("\nBefore ft_strlcat(): %s\n", ft_dst);
-	int ft_total_len = ft_strlcat(ft_dst, ft_src, size);
-	printf("After ft_strlcat(): %s\n", ft_dst);
-	printf("ft_total_len = %d\n", ft_total_len);
+// 	// Own function
+// 	char ft_dst[16] = "Hello,"; // size 8
+// 	char ft_src[] = "World!"; // size 7	
+// 	printf("\nBefore ft_strlcat(): %s\n", ft_dst);
+// 	int ft_total_len = ft_strlcat(ft_dst, ft_src, size);
+// 	printf("After ft_strlcat(): %s\n", ft_dst);
+// 	printf("ft_total_len = %d\n", ft_total_len);
 	
-	return (0);
-}
+// 	return (0);
+// }
