@@ -7,9 +7,10 @@
 int	ft_atoi(const char *str)
 {
 	int i;
+	int a;
 
 	i = 0;
-
+	a = 0;
 	while (isspace(str[i]))
 	{
 		i++;
@@ -19,6 +20,13 @@ int	ft_atoi(const char *str)
 	{
 		i++;
 	}
+
+	while (isdigit(str[i]))
+	{
+		a = (a * 10) + str[i]; // convert str[i] van char naar int!
+		i++;
+	}
+	
 }
 
 int main (void)
