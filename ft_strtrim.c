@@ -1,5 +1,6 @@
 #include "libft.h"
 
+// Prototype in_set according to rules. Static or something?
 int		in_set(const char *set, char c)
 {
 	int i;
