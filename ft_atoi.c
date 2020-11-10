@@ -82,18 +82,18 @@ int	ft_atoi(const char *str)
 // 	return (a);
 // }
 
-int		main(void)
-{
-	printf("real atoi: %i\n", atoi("-92233720368547758998"));
-	printf("my atoi: %i\n\n", ft_atoi("-92233720368547758998"));
+// int		main(void)
+// {
+// 	printf("real atoi: %i\n", atoi("-92233720368547758998"));
+// 	printf("my atoi: %i\n\n", ft_atoi("-92233720368547758998"));
 
-	printf("real atoi: %i\n", atoi("92233720368547758998"));
-	printf("my atoi: %i\n\n", ft_atoi("92233720368547758998"));
+// 	printf("real atoi: %i\n", atoi("92233720368547758998"));
+// 	printf("my atoi: %i\n\n", ft_atoi("92233720368547758998"));
 
-	printf("real atoi: %i\n", atoi("21474836478"));
-	printf("my atoi: %i\n\n", ft_atoi("21474836478"));
+// 	printf("real atoi: %i\n", atoi("21474836478"));
+// 	printf("my atoi: %i\n\n", ft_atoi("21474836478"));
 
-	printf("real atoi: %i\n", atoi("-21474836478"));
-	printf("my atoi: %i\n\n", ft_atoi("-21474836478"));
-	return (0);
-}
+// 	printf("real atoi: %i\n", atoi("-21474836478"));
+// 	printf("my atoi: %i\n\n", ft_atoi("-21474836478"));
+// 	return (0);
+// }

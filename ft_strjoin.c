@@ -9,13 +9,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		return (0);
 	}
-	clen = strlen(s1) + strlen(s2);
+	clen = ft_strlen(s1) + ft_strlen(s2);
 	ret = malloc(clen + 1);
 	if (!ret)
 	{
 		return (0);
 	}
-	strlcpy(ret, s1, clen + 1);
-	strlcat(ret, s2, clen + 1);
+	ft_strlcpy(ret, s1, clen + 1);
+	ft_strlcat(ret, s2, clen + 1);
 	return (ret);
 }
