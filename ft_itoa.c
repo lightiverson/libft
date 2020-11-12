@@ -1,9 +1,23 @@
 #include "libft.h"
 
-/*
-** Calculates to the power of.
-** Takes in base number and exponent.
-*/
+void	ft_rev_int_tab(char *tab, int size)
+{
+	int counter;
+	int reverse_counter;
+	char temp;
+
+	counter = 0;
+	reverse_counter = size - 1;
+	while (counter < (size / 2))
+	{
+		temp = tab[counter];
+		tab[counter] = tab[reverse_counter];
+		tab[reverse_counter] = temp;
+		counter++;
+		reverse_counter--;
+	}
+}
+
 int   ft_int2pwr(int x, int n)
 {
   int i;
@@ -29,80 +43,46 @@ int ft_calc_digits(int i)
 	return(d);
 }
 
-// char *ft_itoa(int n)
+// char	*ft_itoa(int n)
 // {
+// 	int is_n_negative; // Flag
+// 	int size; // size of entire string to be malloced
 // 	char c;
-// 	int i = 0;
-// 	int len = ft_calc_digits(n);
-// 	char ret[len];
-// 	while (n != 0)
-// 	{
-// 		c = (n % 10) + '0';
-// 		ret[len - 1 - i] = c;
-// 		i++;
-// 		n = n / 10;
-// 	}
-// 	ret[i] = '\0';
-// 	return (ft_strdup(ret));
-// }
+// 	char *answer; // string to be returned
+// 	int index;
 
-// char *ft_itoa(int n)
-// {
-// 	char *ret;
-// 	int i;
-// 	int len;
-// 	char c;
-	
-// 	i = 0;
-// 	len = ft_calc_digits(n);
-// 	ret = malloc(len + 1);
-// 	if (!ret)
+// 	is_n_negative = 0;
+// 	size = 0;
+// 	index = 0;
+// 	if (n == 0)
+// 		return (ft_strdup("0"));
+// 	if (n == -2147483648)
+// 		return (ft_strdup("-2147483648"));
+// 	if (n < 0)
 // 	{
+// 		n = n * -1;
+// 		is_n_negative = 1;
+// 		size++;
+// 	}
+// 	size = size + ft_calc_digits(n);
+// 	answer = malloc(size);
+// 	if (!answer)
 // 		return (0);
-// 	}
-// 	// while (n != 0)
-// 	// {
-// 	// 	c = (n % 10) + '0';
-// 	// 	ret[i] = c;
-// 	// 	i++;
-// 	// 	printf("\n%d\n", len--);
-// 	// 	n = n / 10;
-// 	// }
-	
-
 // 	while (n > 0)
 // 	{
 // 		c = (n % 10) + '0';
-// 		ret[len - 1 - i] = c;
-// 		i++;
+// 		answer[index] = c;
+// 		index++;
 // 		n = n / 10;
 // 	}
-// 	ret[i] = '\0';
-// 	return (ret);
-// }
-
-// char *ft_itoa(int n)
-// {
-// 	int index;
-// 	int number_of_digits_in_n;
-// 	char *answer;
-	
-// 	index = 0;
-// 	number_of_digits_in_n = ft_calc_digits(n); // 5
-// 	answer = malloc(number_of_digits_in_n + 1);
-// 	while (number_of_digits_in_n > 0)
+// 	if (is_n_negative)
 // 	{
-// 		int x  = n / ft_int2pwr(10, (number_of_digits_in_n - 1));
-// 		int y = x % 10;
-// 		printf("\ny = %d\n", y);
-
-// 		answer[index] = y + '0';
+// 		answer[index] = '-';
 // 		index++;
-// 		number_of_digits_in_n--;
 // 	}
 // 	answer[index] = '\0';
-// 	printf("\nanswer = %s\n", answer);
-// 	return (0);
+// 	ft_rev_int_tab(answer, size);
+// 	return (answer);
 // }
 
 char *ft_itoa(int n)
@@ -148,10 +128,10 @@ char *ft_itoa(int n)
 	return (answer);
 }
 
-int main(void)
-{
-	char* test;
-	test = ft_itoa(-12345);
-	printf("\n%s\n", test);
-	return(0);
-}
+// int main(void)
+// {
+// 	char* test;
+// 	test = ft_itoa(-12345);
+// 	printf("\n%s\n", test);
+// 	return(0);
+// }
