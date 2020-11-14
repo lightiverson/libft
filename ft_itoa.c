@@ -1,27 +1,28 @@
 #include "libft.h"
 
-int   ft_int2pwr(int x, int n)
+int		ft_int2pwr(int x, int n)
 {
-  int i;
-  int result;
-  i = 0;
-  result = 1;
-  while (i < n)
-  {
-      result *= x;
-      i++;
-  }
-  return (result);
+	int i;
+	int result;
+
+	i = 0;
+	result = 1;
+	while (i < n)
+	{
+		result *= x;
+		i++;
+	}
+	return (result);
 }
 
-int ft_intlen(int n)
+int		ft_intlen(int n)
 {
 	int len;
 
 	len = 1;
 	if (n < 0)
 	{
-		n  = n * -1;
+		n = n * -1;
 		len++;
 	}
 	while (n > 9)
@@ -32,11 +33,11 @@ int ft_intlen(int n)
 	return (len);
 }
 
-char* ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int i;
-	int len;
-	char* str;
+	int		i;
+	int		len;
+	char	*str;
 
 	i = 0;
 	len = ft_intlen(n);
@@ -44,34 +45,19 @@ char* ft_itoa(int n)
 	if (!str)
 		return (0);
 	if (n == -2147483648)
-        return (ft_strdup("-2147483648"));		
+		return (ft_strdup("-2147483648"));
 	if (n < 0)
 	{
 		n = n * -1;
 		str[i] = '-';
 		i++;
 	}
-	len = len - i; // is dit om te compenseren voor de - char?
+	len = len - i;
 	while (len > 0)
 	{
-		// str[i] = ((n / ft_int2pwr(10, len - i - 1)) % 10) + '0';
-		char c  = ((n / ft_int2pwr(10, len - 1)) % 10) + '0';
-		// printf("\nc = %c\n", c);
-		str[i] = c;
-		i++;
+		str[i++] = ((n / ft_int2pwr(10, len - 1)) % 10) + '0';
 		len--;
 	}
 	str[i] = '\0';
-	// printf("\nstr = %s\n", str);
 	return (str);
 }
-
-// int main(void)
-// {
-// 	int x = -12345;
-// 	int y = ft_intlen(x);
-// 	int z = ft_intlen(12345);
-// 	// printf("\ny = %d\n", y);
-// 	// printf("\nz = %d\n", z);
-// 	ft_itoa(x);
-// }
