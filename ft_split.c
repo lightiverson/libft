@@ -1,101 +1,108 @@
 #include "libft.h"
 
-int ft_aantal_delims(char *s, char c)
+int ft_aantal_delims(char const *s, char c)
 {
 	int i;
+	int len;
 	int k;
 
 	i = 0;
-	k = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-			k++;
-		i++;
-	}
-	return (k + 1 + 1);
+    len = 0;
+    k = 0;
+    while (s[i])
+    {
+        while ((s[i] != c) && (s[i] != '\0'))
+        {
+        len++;
+        i++;
+        }
+        if (len > 0)
+        {
+			k = k + 2;
+            len = 0;
+        }
+        else
+            i++;
+    }
+	return (k);
 }
 
-int *ft_get_indexes(char *s, char c)
+int *ft_get_indexes(char const *s, char c)
 {
-	int* indexes;
 	int i;	
 	int j;
 	int count;
+	int* indexes;
+	int len;
 
 	i = 0;
 	j = 0;
+	len = 0;
 	count = ft_aantal_delims(s, c);
 	indexes = malloc(count * sizeof(*indexes));
 	if (!indexes)
 		return (0);
-	
-	indexes[j] = 0;
-	j++;
-	
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-		{
-			indexes[j] = i + 1;
+    while (s[i])
+    {
+        while ((s[i] != c) && (s[i] != '\0'))
+        {
+        len++;
+        i++;
+        }
+        if (len > 0)
+        {
+			indexes[j] = i - len;
 			j++;
-		}
-		i++;
-	}
-
-	indexes[j] = i + 1;
+			indexes[j] = len;
+			j++;
+            len = 0;
+        }
+        else
+            i++;
+    }
 	return (indexes);
 }
 
-int ft_split(char *s, char c) // not the right prototype!!
+char **ft_split(char const *s, char c)
 {
 	int i;
+	int j;	
 	int *indexes;
 	int numb_of_delims;
+	char **a;
+
+	if (!s)
+		return (0);
 
 	i = 0;
+	j = 0;
 	indexes = ft_get_indexes(s, c);
 	numb_of_delims = ft_aantal_delims(s, c);
-	printf("\nnumb_of_delims = %d\n", numb_of_delims);
-
-	while (i < numb_of_delims - 1)
+	a = malloc((numb_of_delims / 2) * sizeof(*a) + 1);
+	if (!a)
 	{
-		printf("\nft_substr() = %s\n", ft_substr(s, indexes[i], indexes[i + 1] - 1 - indexes[i]));
-		i++;
+		free(indexes);
+		free(a);
+		return (0);
 	}
-
-	return (0);
+	while (i < numb_of_delims)
+	{
+		a[j] = ft_substr(s, indexes[i], indexes[i + 1]);
+		i = i + 2;
+		j++;
+	}
+	a[j] = NULL;
+	return (a);
 }
 
-
-
-int main (void)
+int main(void)
 {
-	char *s = "Foo_Bar_Baz";
-	char c = '_';
-	// int y = ft_aantal_delims(s, c);
-	// printf("\ny = %d", y);
-	
-	// int *y = ft_get_indexes(s, c);
-	// int z = ft_aantal_delims(s, c);
-	// printf("\nz = %d\n", z);
-	
-	// int loop;
-	// for(loop = 0; loop < z; loop++)
-    // 	printf("%d ", y[loop]);
-
-	// printf("\nft_substr() = %s\n", ft_substr(s, 0, 3));
-	// printf("\nft_substr() = %s\n", ft_substr(s, 4, 7 - 4));
-	// printf("\nft_substr() = %s\n", ft_substr(s, 8, 10 - 7));
-
-	// int i = 0;
-	// while (i < z)
-	// {
-	// 	printf("\n%s\n", ft_substr(s, y[i], y[i + 1] - 1 - y[i]));
-	// 	i++;
-	// }
-
-	ft_split(s, c);
-	
+	char *s = "      split       this for   me  !       ";
+	char **result = ft_split(s, ' ');
+	while (*result)
+	{
+		printf("%s\n", *result);
+		result++;
+	}
 	return (0);
 }
