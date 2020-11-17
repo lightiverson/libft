@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_memmove.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/11/17 15:44:08 by kgajadie      #+#    #+#                 */
+/*   Updated: 2020/11/17 15:45:04 by kgajadie      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
@@ -6,11 +18,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	const char		*s;
 	unsigned long	i;
 	char			*d_last;
-	const char			*s_last;
+	const char		*s_last;
 
 	d = dst;
 	s = src;
-	i = 0;
 	if (!dst && !src)
 		return (0);
 	if (d < s)
