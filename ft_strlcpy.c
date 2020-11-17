@@ -12,8 +12,15 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
+	if (!src || !dst)
+	{
+		return (0);
+	}	
 	unsigned long srclen = ft_strlen(src);
 	unsigned long i = 0;
+
+
+	
 
 	if (dstsize == 0)
 	{
@@ -35,7 +42,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	return (srclen);
 }
 
-
+// Van iemand anders
 // size_t      ft_strlcpy(char *dst, const char *src, size_t dstsize)
 // {
 //     size_t i;
