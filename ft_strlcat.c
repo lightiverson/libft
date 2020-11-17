@@ -1,10 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_strlcat.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/11/17 16:33:39 by kgajadie      #+#    #+#                 */
+/*   Updated: 2020/11/17 16:35:31 by kgajadie      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-size_t ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	int i = 0;
-	size_t dst_len = ft_strlen(dst); // is 6. dst[6] is null terminating char
-	size_t dst_len_o = ft_strlen(dst); // is 6. dst[6] is null terminating char
+	int		i;
+	size_t	dst_len;
+	size_t	dst_len_o;
+
+	i = 0;
+	dst_len = ft_strlen(dst);
+	dst_len_o = ft_strlen(dst);
 	if (dstsize > dst_len)
 	{
 		while (dst_len < dstsize - 1 && src[i])
