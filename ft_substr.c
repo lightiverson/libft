@@ -34,3 +34,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	res[i] = '\0';
 	return (res);
 }
+
+int main()
+{
+    char *str = ft_substr("test!", 4, 1);
+    printf("str = %s\n", str);
+    return (0);
+}
