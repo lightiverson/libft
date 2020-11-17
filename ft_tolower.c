@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_tolower.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/11/17 16:02:01 by kgajadie      #+#    #+#                 */
+/*   Updated: 2020/11/17 16:02:28 by kgajadie      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_tolower(int c)
+int		ft_tolower(int c)
 {
-	if((c >= 'A') && (c <= 'Z'))
+	if ((c >= 'A') && (c <= 'Z'))
 	{
 		return (c + 32);
 	}
 	else
 	{
-		return c;
+		return (c);
 	}
 }

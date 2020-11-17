@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_toupper.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/11/17 16:02:34 by kgajadie      #+#    #+#                 */
+/*   Updated: 2020/11/17 16:03:07 by kgajadie      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_toupper(int c)
+int		ft_toupper(int c)
 {
-	if((c >= 'a') && (c <= 'z'))
+	if ((c >= 'a') && (c <= 'z'))
 	{
 		return (c - 32);
 	}
 	else
 	{
-		return c;
+		return (c);
 	}
 }
