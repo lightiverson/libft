@@ -1,18 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_strnstr.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/11/17 16:44:20 by kgajadie      #+#    #+#                 */
+/*   Updated: 2020/11/17 16:45:27 by kgajadie      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char * ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t i = 0;
-	size_t j = 0;
+	size_t i;
+	size_t j;
 
+	i = 0;
+	j = 0;
 	if (needle[0] == '\0')
 	{
 		return ((char *)haystack);
 	}
-	
 	while ((i < len) && (haystack[i] != '\0'))
 	{
-		while (((haystack[i + j] == needle[j]) && ((i + j) < len)) || (needle[j] == '\0'))
+		while (((haystack[i + j] == needle[j])
+			&& ((i + j) < len)) || (needle[j] == '\0'))
 		{
 			if (needle[j] == '\0')
 			{
@@ -25,19 +39,3 @@ char * ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-
-// int main (void)
-// {
-// 	const char *largestring = "MZIRIBMZIRIBMZE123";
-// 	const char *smallstring = "MZIRIBMZE";
-// 	char *ptr;
-
-// 	ptr = ft_strnstr(largestring, smallstring, strlen(smallstring));
-// 	printf("\nptr = %p", ptr);
-// 	printf("\nanswer = %s", ptr);
-// 	return (0);
-
-// 	// char dst[30];
-// 	// strlcpy(dst, largestring, 9);
-// 	// printf("\n%s\n", dst);
-// }
