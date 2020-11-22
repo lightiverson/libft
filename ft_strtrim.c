@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_strtrim.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/11/22 11:35:38 by kgajadie      #+#    #+#                 */
+/*   Updated: 2020/11/22 11:41:52 by kgajadie      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-// Prototype in_set according to rules. Static or something?
-int		in_set(const char *set, char c)
+static	int	in_set(const char *set, char c)
 {
 	int i;
 
@@ -17,7 +28,7 @@ int		in_set(const char *set, char c)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	char	*n;
 	int		s1_start;

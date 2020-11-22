@@ -6,13 +6,13 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/22 11:42:42 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/22 12:00:13 by kgajadie      ########   odam.nl         */
+/*   Updated: 2020/11/22 11:43:14 by kgajadie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		ft_aantal_delims(char const *s, char c)
+static	int	ft_aantal_delims(char const *s, char c)
 {
 	int i;
 	int len;
@@ -39,15 +39,19 @@ static	int		ft_aantal_delims(char const *s, char c)
 	return (k);
 }
 
-static	void	ft_helper_get_indexes(char const *s, char c, int *indexes)
+static	int	*ft_get_indexes(char const *s, char c)
 {
 	int		i;
 	int		j;
 	int		len;
+	int		*indexes;
 
 	i = 0;
 	j = 0;
 	len = 0;
+	indexes = malloc(ft_aantal_delims(s, c) * sizeof(*indexes));
+	if (!indexes)
+		return (0);
 	while (s[i])
 	{
 		while ((s[i] != c) && (s[i] != '\0'))
@@ -57,29 +61,17 @@ static	void	ft_helper_get_indexes(char const *s, char c, int *indexes)
 		}
 		if (len > 0)
 		{
-			indexes[j] = i - len;
-			j++;
-			indexes[j] = len;
-			j++;
+			indexes[j++] = i - len;
+			indexes[j++] = len;
 			len = 0;
 		}
 		else
 			i++;
 	}
-}
-
-static	int		*ft_get_indexes(char const *s, char c)
-{
-	int		*indexes;
-
-	indexes = malloc(ft_aantal_delims(s, c) * sizeof(*indexes));
-	if (!indexes)
-		return (0);
-	ft_helper_get_indexes(s, c, indexes);
 	return (indexes);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int			i;
 	int			j;

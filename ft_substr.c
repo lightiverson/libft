@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_substr.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/11/22 11:10:49 by kgajadie      #+#    #+#                 */
+/*   Updated: 2020/11/22 11:11:07 by kgajadie      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -33,11 +45,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	res[i] = '\0';
 	return (res);
-}
-
-int main()
-{
-    char *str = ft_substr("test!", 4, 1);
-    printf("str = %s\n", str);
-    return (0);
 }
