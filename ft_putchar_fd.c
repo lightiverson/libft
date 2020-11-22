@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memccpy.c                                       :+:    :+:            */
+/*   ft_putchar_fd.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/22 12:08:07 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/22 12:08:27 by kgajadie      ########   odam.nl         */
+/*   Created: 2020/11/22 12:33:43 by kgajadie      #+#    #+#                 */
+/*   Updated: 2020/11/22 12:38:28 by kgajadie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *restrict dst,
-const void *restrict src, int c, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-	char			*d;
-	const char		*s;
-
-	i = 0;
-	d = dst;
-	s = src;
-	while (i < n)
-	{
-		d[i] = s[i];
-		if (d[i] == (char)c)
-		{
-			return (&d[i + 1]);
-		}
-		i++;
-	}
-	return (0);
+	write(fd, &c, 1);
 }

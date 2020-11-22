@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memccpy.c                                       :+:    :+:            */
+/*   ft_putnbr_fd.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/22 12:08:07 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/22 12:08:27 by kgajadie      ########   odam.nl         */
+/*   Created: 2020/11/22 13:12:26 by kgajadie      #+#    #+#                 */
+/*   Updated: 2020/11/22 13:12:37 by kgajadie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *restrict dst,
-const void *restrict src, int c, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-	char			*d;
-	const char		*s;
+	char c;
 
-	i = 0;
-	d = dst;
-	s = src;
-	while (i < n)
+	if (n == -2147483648)
 	{
-		d[i] = s[i];
-		if (d[i] == (char)c)
-		{
-			return (&d[i + 1]);
-		}
-		i++;
+		write(fd, "-", 1);
+		write(fd, "2147483648", 10);
+		return ;
 	}
-	return (0);
+	else if (n < 0)
+	{
+		n = n * -1;
+		write(fd, "-", 1);
+	}
+	if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+	}
+	c = ((n % 10) + '0');
+	write(fd, &c, 1);
 }

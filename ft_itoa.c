@@ -6,7 +6,7 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/22 12:02:05 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/22 12:02:44 by kgajadie      ########   odam.nl         */
+/*   Updated: 2020/11/22 12:57:26 by kgajadie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ char		*ft_itoa(int n)
 	int		len;
 	char	*str;
 
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	i = 0;
 	len = ft_intlen(n);
 	str = malloc(len + 1);
 	if (!str)
 		return (0);
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
 	if (n < 0)
 	{
 		n = n * -1;

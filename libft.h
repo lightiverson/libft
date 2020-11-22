@@ -34,4 +34,8 @@ int	ft_isspace(int c); // not required. self choosen. check the rules.
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
+void	ft_putstr_fd(char *s, int fd);
+
+char		*ft_itoa(int n);
+
 #endif
