@@ -6,7 +6,7 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/22 11:10:49 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/22 11:11:07 by kgajadie      ########   odam.nl         */
+/*   Updated: 2020/11/22 13:16:53 by kgajadie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	end;
 	int				i;
 
+	if (!s)
+		return (0);	
 	end = start + len;
 	res = malloc(len + 1);
 	i = 0;
-	if (!s)
-		return (0);
 	if (!res)
 		return (0);
 	if (start >= ft_strlen(s))
