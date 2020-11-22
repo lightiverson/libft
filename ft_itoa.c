@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_itoa.c                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/11/22 12:02:05 by kgajadie      #+#    #+#                 */
+/*   Updated: 2020/11/22 12:02:44 by kgajadie      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int		ft_int2pwr(int x, int n)
+static	int	ft_int2pwr(int x, int n)
 {
 	int i;
 	int result;
@@ -15,7 +27,7 @@ int		ft_int2pwr(int x, int n)
 	return (result);
 }
 
-int		ft_intlen(int n)
+static	int	ft_intlen(int n)
 {
 	int len;
 
@@ -33,7 +45,7 @@ int		ft_intlen(int n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	int		i;
 	int		len;
