@@ -6,7 +6,7 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/17 17:01:34 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/17 17:03:17 by kgajadie      ########   odam.nl         */
+/*   Updated: 2020/11/22 13:51:05 by kgajadie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_atoi(const char *str)
 		i++;
 	if (str[i] == '-')
 		sign = -1;
-	while ((str[i] == '-') || (str[i] == '+'))
+	if ((str[i] == '-') || (str[i] == '+'))
 		i++;
 	while (ft_isdigit(str[i]) && (a <= 2147483648))
 	{
