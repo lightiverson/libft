@@ -6,7 +6,7 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/22 11:42:42 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/22 16:39:20 by kgajadie      ########   odam.nl         */
+/*   Updated: 2020/11/24 12:56:10 by kgajadie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static	int		ft_words_count(char const *s, char c)
 	{
 		while ((s[i] != c) && (s[i] != '\0'))
 		{
-		len++;
-		i++;
+			len++;
+			i++;
 		}
 		if (len > 0)
 		{
@@ -65,71 +65,16 @@ static	char	**ft_create_td_array(char const *s, char c)
 	return (td_array);
 }
 
-static	int		ft_fill_td_array(char const *s, char c)
-{
-	int i;
-	int len;
-	int k;
-
-	i = 0;
-	len = 0;
-	k = 0;
-	while (s[i])
-	{
-		while ((s[i] != c) && (s[i] != '\0'))
-		{
-		len++;
-		i++;
-		}
-		if (len > 0)
-		{
-			printf("\n[%d, %d]\n", i - len, len); // HIER WAS JE GEBLEVEN. ZET STRDUP ERIN.
-			k++;
-			len = 0;
-		}
-		else
-			i++;
-	}
-	return (k);
-}
-
-
-static	int		ft_aantal_delims(char const *s, char c)
-{
-	int i;
-	int len;
-	int k;
-
-	i = 0;
-	len = 0;
-	k = 0;
-	while (s[i])
-	{
-		while ((s[i] != c) && (s[i] != '\0'))
-		{
-			len++;
-			i++;
-		}
-		if (len > 0)
-		{
-			k = k + 2;
-			len = 0;
-		}
-		else
-			i++;
-	}
-	return (k);
-}
-
-static	void	ft_helper_get_indexes(char const *s, char c, int *indexes)
+static	char	**ft_fill_td_array(char const *s, char c, char **td_array)
 {
 	int		i;
-	int		j;
 	int		len;
+	int		j;
+	char	*temp;
 
 	i = 0;
-	j = 0;
 	len = 0;
+	j = 0;
 	while (s[i])
 	{
 		while ((s[i] != c) && (s[i] != '\0'))
@@ -139,79 +84,44 @@ static	void	ft_helper_get_indexes(char const *s, char c, int *indexes)
 		}
 		if (len > 0)
 		{
-			indexes[j] = i - len;
-			j++;
-			indexes[j] = len;
+			temp = ft_substr(s, i - len, len);
+			if (!temp)
+				return (ft_free_td_array(td_array, j));
+			td_array[j] = temp;
 			j++;
 			len = 0;
 		}
 		else
 			i++;
 	}
-}
-
-static	int		*ft_get_indexes(char const *s, char c)
-{
-	int		*indexes;
-
-	indexes = malloc(ft_aantal_delims(s, c) * sizeof(*indexes));
-	if (!indexes)
-		return (0);
-	ft_helper_get_indexes(s, c, indexes);
-	return (indexes);
-}
-
-static	char	**free_kodak(char **a, int i)
-{
-	while (index > 0)
-	{
-		free(a[i - 1]);
-		i--;
-	}
-	free(a);
-	return (NULL);
+	return (td_array);
 }
 
 char			**ft_split(char const *s, char c)
 {
-	int			i;
-	int			j;
-	int			*indexes;
-	char		**a;
+	char	**td_array;
 
 	if (!s)
-		return (0);
-	i = 0;
-	j = 0;
-	indexes = ft_get_indexes(s, c);
-	a = malloc((ft_aantal_delims(s, c) / 2) * sizeof(*a) + 1);
-	if (!a)
-	{
-		free(indexes);
-		free(a);
-		return (0);
-	}
-	while (i < ft_aantal_delims(s, c))
-	{
-		a[j] = ft_substr(s, indexes[i], indexes[i + 1]);
-		if (!a[j])
-			return (free_kodak(a, j));
-		j++;
-		i = i + 2;
-	}
-	a[j] = NULL;
-	free(indexes);
-	return (a);
+		return (NULL);
+	td_array = ft_create_td_array(s, c);
+	if (!td_array)
+		return (NULL);
+	td_array = ft_fill_td_array(s, c, td_array);
+	if (!td_array)
+		return (NULL);
+	return (td_array);
 }
 
-int main(void)
-{
-	char *s = " Hello World";
-	char d = ' ';
-	// char **tda;
-	// tda = ft_split(s, d);
-	// printf("\ntda[0] = %s\n", tda[0]);
-	// printf("\nft_words_count() = %d", ft_words_count(s, d));
-	ft_fill_td_array(s, d);
-	return (0);
-}
+// int main(void)
+// {
+// 	char *s = " Hello World";
+// 	char d = ' ';
+
+// 	char **td_array;
+
+// 	td_array = ft_split(s, d);
+// 	printf("\ntd_array[0] = %s\n", td_array[0]);
+// 	printf("\ntd_array[1] = %s\n", td_array[1]);
+// 	printf("\ntd_array[2] = %s\n", td_array[2]);
+// 	return (0);
+// }
