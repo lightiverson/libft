@@ -6,7 +6,7 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/22 12:08:07 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/22 12:08:27 by kgajadie      ########   odam.nl         */
+/*   Updated: 2020/11/24 15:13:39 by kgajadie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memccpy(void *restrict dst,
 const void *restrict src, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	char			*d;
 	const char		*s;
 

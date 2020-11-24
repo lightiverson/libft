@@ -6,7 +6,7 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/22 11:42:42 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/24 12:56:10 by kgajadie      ########   odam.nl         */
+/*   Updated: 2020/11/24 16:56:57 by kgajadie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,12 @@ static	char	**ft_fill_td_array(char const *s, char c, char **td_array)
 	int		i;
 	int		len;
 	int		j;
-	char	*temp;
 
 	i = 0;
-	len = 0;
 	j = 0;
 	while (s[i])
 	{
+		len = 0;
 		while ((s[i] != c) && (s[i] != '\0'))
 		{
 			len++;
@@ -84,12 +83,10 @@ static	char	**ft_fill_td_array(char const *s, char c, char **td_array)
 		}
 		if (len > 0)
 		{
-			temp = ft_substr(s, i - len, len);
-			if (!temp)
+			td_array[j] = ft_substr(s, i - len, len);
+			if (td_array[j] == NULL)
 				return (ft_free_td_array(td_array, j));
-			td_array[j] = temp;
 			j++;
-			len = 0;
 		}
 		else
 			i++;
@@ -111,17 +108,3 @@ char			**ft_split(char const *s, char c)
 		return (NULL);
 	return (td_array);
 }
-
-// int main(void)
-// {
-// 	char *s = " Hello World";
-// 	char d = ' ';
-
-// 	char **td_array;
-
-// 	td_array = ft_split(s, d);
-// 	printf("\ntd_array[0] = %s\n", td_array[0]);
-// 	printf("\ntd_array[1] = %s\n", td_array[1]);
-// 	printf("\ntd_array[2] = %s\n", td_array[2]);
-// 	return (0);
-// }
