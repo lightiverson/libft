@@ -6,7 +6,7 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/17 17:11:21 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/17 17:11:45 by kgajadie      ########   odam.nl         */
+/*   Updated: 2020/11/24 13:59:58 by kgajadie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ char	*ft_strdup(const char *s1)
 	char	*res;
 
 	s1_len = ft_strlen(s1) + 1;
-	res = malloc(s1_len);
+	res = malloc(s1_len * sizeof(*res));
 	if (!res)
-		return (0);
+		return (NULL);
 	ft_memcpy(res, s1, s1_len);
 	return (res);
 }
