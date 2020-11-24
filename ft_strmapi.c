@@ -6,7 +6,7 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/22 12:04:03 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/22 12:04:04 by kgajadie      ########   odam.nl         */
+/*   Updated: 2020/11/24 17:06:28 by kgajadie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*answer;
 
 	if (!s || !(*f))
-		return (0);
+		return (NULL);
 	answer = ft_strdup(s);
 	if (!answer)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (s[i] != '\0')
 	{
 		answer[i] = (*f)(i, s[i]);
 		if (!answer[i])
-			return (0);
+			return (NULL);
 		i++;
 	}
 	return (answer);
