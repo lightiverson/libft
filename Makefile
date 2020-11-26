@@ -1,13 +1,23 @@
-NAME = libft.a # what are libft.a's dependencies
-OBJ_FILES = $(SRC_FILES:.c=.o) # pakt alle src_files bestanden maar dan degene die eindigen in .o
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    Makefile                                           :+:    :+:             #
+#                                                      +:+                     #
+#    By: kawish <kawish@student.codam.nl>             +#+                      #
+#                                                    +#+                       #
+#    Created: 2020/11/26 12:38:35 by kawish        #+#    #+#                  #
+#    Updated: 2020/11/26 12:40:13 by kawish        ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = libft.a
+OBJ_FILES = $(SRC_FILES:.c=.o)
 SRC_FILES = $(wildcard ft_*.c)
 HEADER_FILES = libft.h
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-# $(NAME): $(OBJ_FILES)
-# 	$(CC) -o $@ $^
 $(NAME): $(OBJ_FILES)
 	ar -rcs $(NAME) $(OBJ_FILES)
 

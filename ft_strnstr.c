@@ -12,6 +12,19 @@
 
 #include "libft.h"
 
+/*
+**	Description:
+**	The strnstr() function locates the first occurrence of the null-ter-
+**	minated string needle in the string haystack, where not more than len
+**	characters are searched.  Characters that appear after a `\0' charac-
+**	ter are not searched.
+**
+**	Returns:
+**	a pointer to the first character of the needle in haystack
+**	if needle is not in haystack, NULL is returned
+**	if needle is empty string, haystack is returned
+*/
+
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t i;

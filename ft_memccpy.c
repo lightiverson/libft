@@ -12,8 +12,20 @@
 
 #include "libft.h"
 
-void	*ft_memccpy(void *restrict dst,
-const void *restrict src, int c, size_t n)
+/*
+**	Description:
+**	The memccpy() function copies up to n bytes from src to dst.
+**	If the character c occurs in the string src, the copy stops. The copy
+**	does include the character c.
+**
+**	When source and destination strings overlap, behavior is undefined.
+**
+**	Returns:
+**	a pointer to the byte after the first c in the string dst
+**	if c not in string, return NULL pointer
+*/
+
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t			i;
 	char			*d;

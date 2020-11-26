@@ -6,13 +6,32 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/17 17:01:34 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/22 13:51:05 by kgajadie      ########   odam.nl         */
+/*   Updated: 2020/11/26 12:45:12 by kawish        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+/*
+** DESCRIPTION
+** The atoi() function converts the initial portion of the string pointed to by
+** str to int representation.
+*/
+
+static	int	ft_isspace(int c)
+{
+	if (c == '\t' || c == '\n' || c == '\v'
+		|| c == '\f' || c == '\r' || c == ' ')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+
+int			ft_atoi(const char *str)
 {
 	int			i;
 	long int	a;

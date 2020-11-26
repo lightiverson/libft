@@ -6,11 +6,20 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/17 15:31:12 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/17 15:31:42 by kgajadie      ########   odam.nl         */
+/*   Updated: 2020/11/26 14:11:54 by kawish        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** DESCRIPTION
+** The memset() function writes len bytes of value c (converted to an
+** unsigned char) to the string b.
+**
+** RETURN VALUES
+** The memset() function returns its first argument.
+*/
 
 void	*ft_memset(void *b, int c, size_t len)
 {

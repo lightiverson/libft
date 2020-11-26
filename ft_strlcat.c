@@ -12,7 +12,18 @@
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+/*
+**	Description:
+**	The strlcat() function appends string src to the end of dst. It takes the
+**	full size of the destination buffer and guarantees NUL-termination.
+**	Room for the NUL-termator should be included in dstsize.
+**
+**	Returns:
+**	total length of string it tries to create, aka the initial length
+**	of dst plus the length of src.
+*/
+
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	int		i;
 	size_t	dst_len;
