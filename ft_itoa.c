@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static	int	ft_int2pwr(int x, int n)
+static	int		ft_int2pwr(int x, int n)
 {
 	int i;
 	int result;
@@ -27,9 +27,9 @@ static	int	ft_int2pwr(int x, int n)
 	return (result);
 }
 
-static	int	ft_intlen(int n)
+static	size_t	ft_intlen(int n)
 {
-	int len;
+	size_t len;
 
 	len = 1;
 	if (n < 0)
@@ -45,10 +45,10 @@ static	int	ft_intlen(int n)
 	return (len);
 }
 
-char		*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	int		i;
-	int		len;
+	size_t	len;
 	char	*str;
 
 	if (n == -2147483648)

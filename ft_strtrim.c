@@ -31,12 +31,12 @@ static	int	in_set(const char *set, char c)
 char		*ft_strtrim(char const *s1, char const *set)
 {
 	char	*n;
-	int		s1_start;
-	int		s1_end;
+	size_t	s1_start;
+	size_t	s1_end;
 
 	s1_start = 0;
 	if (!s1)
-		return (0);
+		return (NULL);
 	s1_end = (ft_strlen(s1) - 1);
 	while (s1[s1_start] != '\0')
 	{

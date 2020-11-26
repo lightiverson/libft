@@ -14,7 +14,7 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		clen;
+	size_t	clen;
 	char	*ret;
 
 	if (!s1 && !s2)
