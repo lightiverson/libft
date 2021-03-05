@@ -6,7 +6,7 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/22 13:33:20 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/22 13:38:43 by kgajadie      ########   odam.nl         */
+/*   Updated: 2021/03/05 14:13:25 by kawish        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 
 /*
-**	Part 2: Additional functions
+**	Part 2: additional functions
 */
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -60,5 +60,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+/* Custom added functions */
+int		ft_isspace(int c);
 
 #endif

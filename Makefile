@@ -6,7 +6,7 @@
 #    By: kawish <kawish@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/26 12:38:35 by kawish        #+#    #+#                  #
-#    Updated: 2021/03/05 12:49:06 by kawish        ########   odam.nl          #
+#    Updated: 2021/03/05 14:17:57 by kawish        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,8 @@ SRC_FILES = ft_atoi.c \
 			ft_strtrim.c \
 			ft_substr.c \
 			ft_tolower.c \
-			ft_toupper.c
+			ft_toupper.c \
+			ft_isspace.c
 
 all: $(NAME)
 
