@@ -6,7 +6,7 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/22 11:35:38 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/22 11:41:52 by kgajadie      ########   odam.nl         */
+/*   Updated: 2021/03/05 11:58:11 by kawish        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static	int	in_set(const char *set, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (set[i] != '\0')
@@ -28,7 +28,11 @@ static	int	in_set(const char *set, char c)
 	return (0);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+/* Allocates (with malloc(3)) and returns a copy of’s1’ 
+with the characters specified in ’set’ removed
+from the beginning and the end of the string */
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*n;
 	size_t	s1_start;

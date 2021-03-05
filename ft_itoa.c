@@ -6,16 +6,16 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/22 12:02:05 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/22 12:57:26 by kgajadie      ########   odam.nl         */
+/*   Updated: 2021/03/04 20:23:19 by kawish        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		ft_int2pwr(int x, int n)
+static	int	ft_int2pwr(int x, int n)
 {
-	int i;
-	int result;
+	int	i;
+	int	result;
 
 	i = 0;
 	result = 1;
@@ -29,7 +29,7 @@ static	int		ft_int2pwr(int x, int n)
 
 static	size_t	ft_intlen(int n)
 {
-	size_t len;
+	size_t	len;
 
 	len = 1;
 	if (n < 0)
@@ -45,7 +45,9 @@ static	size_t	ft_intlen(int n)
 	return (len);
 }
 
-char			*ft_itoa(int n)
+/* The ft_itoa() function converts int n to char *str representation */
+
+char	*ft_itoa(int n)
 {
 	int		i;
 	size_t	len;

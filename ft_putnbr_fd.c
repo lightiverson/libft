@@ -6,15 +6,17 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/22 13:12:26 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/22 13:12:37 by kgajadie      ########   odam.nl         */
+/*   Updated: 2021/03/04 20:27:04 by kawish        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Outputs the integer ’n’ to the given filedescriptor */
+
 void	ft_putnbr_fd(int n, int fd)
 {
-	char c;
+	char	c;
 
 	if (n == -2147483648)
 	{

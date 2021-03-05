@@ -6,13 +6,16 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/17 16:02:01 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/17 16:02:28 by kgajadie      ########   odam.nl         */
+/*   Updated: 2021/03/05 11:59:59 by kawish        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+/* Returns the lowercase equivalent of c.
+If c is not an uppercase letter, c itself is returned */
+
+int	ft_tolower(int c)
 {
 	if ((c >= 'A') && (c <= 'Z'))
 	{

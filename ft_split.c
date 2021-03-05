@@ -6,17 +6,17 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/22 11:42:42 by kgajadie      #+#    #+#                 */
-/*   Updated: 2020/11/24 16:56:57 by kgajadie      ########   odam.nl         */
+/*   Updated: 2021/03/04 20:29:21 by kawish        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		ft_words_count(char const *s, char c)
+static	int	ft_words_count(char const *s, char c)
 {
-	int i;
-	int len;
-	int k;
+	int	i;
+	int	len;
+	int	k;
 
 	i = 0;
 	len = 0;
@@ -41,7 +41,7 @@ static	int		ft_words_count(char const *s, char c)
 
 static	char	**ft_free_td_array(char **td_array, int index)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < index)
@@ -94,7 +94,11 @@ static	char	**ft_fill_td_array(char const *s, char c, char **td_array)
 	return (td_array);
 }
 
-char			**ft_split(char const *s, char c)
+/* Allocates (with malloc(3)) and returns an array
+of strings obtained by splitting ’s’ using the
+character ’c’ as a delimiter.  The array must beended by a NULL pointer. */
+
+char	**ft_split(char const *s, char c)
 {
 	char	**td_array;
 
