@@ -12,5 +12,6 @@ A more detailed explanation on the library's functions can be found in in the [a
 
 ## Running
 1. Compile libft.a with any source files you'd like. And execute the resulting executable i.e:
-```c
+```bash
 gcc libft.a your_source_file.c -o execute_me && execute_me
+```
