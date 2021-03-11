@@ -3,7 +3,7 @@ A C library consisting of personally re-written versions of C's most used standa
 
 This library may be expanded on at any time.
 
-A more detailed explanation on the library's functions can be found in in the [assignment sheet](en.subject.pdf).
+A more detailed explanation on the library's functions can be found in the [assignment sheet](en.subject.pdf).
 
 ## Installing
 1. Use git to clone this repository (the instructions will assume you've done this instead of clicked on "Download ZIP)
