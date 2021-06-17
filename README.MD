@@ -1,17 +1,43 @@
+
 # Libft
+
 A C library consisting of personally re-written versions of C's most used standard functions. As well as several custom functions.
 
 This library may be expanded on at any time.
+## FAQ
 
-A more detailed explanation on the library's functions can be found in the [assignment sheet](en.subject.pdf).
+#### Result
 
-## Installing
-1. Use git to clone this repository (the instructions will assume you've done this instead of clicked on "Download ZIP)
-2. ```cd libft```
-3. ```make```
+100%
+#### Status
 
-## Running
-1. Compile libft.a with any source files you'd like. And execute the resulting executable i.e:
+Completed
+
+
+  
+## Installation 
+
+```bash 
+  git clone https://github.com/lightiverson/libft.git
+  cd libft
+```
+    
+## Usage/Examples
+
+Link libft.a to source/object files during compilation. And execute resulting executable. For example:
+
 ```bash
 gcc libft.a your_source_file.c -o execute_me && execute_me
 ```
+
+  
+## Appendix
+
+A more detailed explanation on the library's functions can be found in the [assignment sheet](en.subject.pdf).
+
+  
+## Authors
+
+- [@lightiverson](https://www.github.com/lightiverson)
+
+  
