@@ -6,7 +6,7 @@
 /*   By: kgajadie <kgajadie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/17 15:46:24 by kgajadie      #+#    #+#                 */
-/*   Updated: 2021/03/04 20:24:29 by kawish        ########   odam.nl         */
+/*   Updated: 2021/11/26 13:58:30 by kgajadie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	{
 		if (((unsigned char *)s)[i] == (unsigned char)c)
 		{
-			return ((void *)&(s[i]));
+			return ((void *)s + i);
 		}
 		i++;
 	}
