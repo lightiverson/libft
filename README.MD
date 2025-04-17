@@ -14,14 +14,14 @@ This library may be expanded on at any time.
 Completed
 
 
-  
-## Installation 
 
-```bash 
+## Installation
+
+```bash
   git clone https://github.com/lightiverson/libft.git
   cd libft
 ```
-    
+
 ## Usage/Examples
 
 Link libft.a to source/object files during compilation. And execute resulting executable. For example:
@@ -30,14 +30,6 @@ Link libft.a to source/object files during compilation. And execute resulting ex
 gcc libft.a your_source_file.c -o execute_me && execute_me
 ```
 
-  
-## Appendix
-
-A more detailed explanation on the library's functions can be found in the [assignment sheet](en.subject.pdf).
-
-  
 ## Authors
 
 - [@lightiverson](https://www.github.com/lightiverson)
-
-  
